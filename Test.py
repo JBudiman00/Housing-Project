@@ -18,7 +18,12 @@ def get_db():
     finally:
         db.close()
 
+#Get requests
+#Returns list of all users
 @app.get("/users/", response_model=List[schemas.User])
-def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    users = crud.get_user(db, skip=skip, limit=limit)
+def read_users(db: Session = Depends(get_db)):
+    #users = crud.get_user(db)
+    users = db.query(models.User).all()
     return users
+
+#Post requests
