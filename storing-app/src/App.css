@@ -1,0 +1,190 @@
+.App {
+  overflow: hidden;
+}
+.Login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15%;
+}
+
+.SignUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+.login--label {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.credentials--input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input--form {
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login--button {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 140px;
+  font-size: 24px;
+}
+
+/* search results css*/
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.storage-name > h1 {
+  font-size: 32px;
+}
+
+.storage-image {
+  
+}
+
+.img-storage {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.storage-name {
+
+}
+
+.host-name-profile {
+  display: flex;
+  flex-direction: row;
+  vertical-align:auto;
+}
+
+.host-name-profile > span {
+  font-size: 20px;
+}
+
+.storage-desc {
+
+}
+
+.profile-icon {
+
+  margin-right: 10px;
+}
+
+.listing-buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.desc-details {
+  font-size: 20px;
+}
+
+.buttons-listing {
+  border-radius: 16px;
+  padding: 5px 10px 5px 10px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  border: 1px;
+  border-style: solid;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 20px;
+}
+
+.price--filters {
+  display: flex;
+  flex-direction: row;
+}
+
+.price-form {
+
+}
+
+.price--input {
+  margin-left: 10px;
+  width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.date-form {
+  margin-left: 10px;
+}
+
+.date--input {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.address--input {
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.main-result-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.results--title {
+  font-size: 30px;
+  border: 1px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15%;
+  padding-right: 15%;
+  border-style: solid;
+  margin-bottom: 20px;
+}
+
+.listings {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 500px 1000px;
+  grid-gap: 20px;
+}
+
+.results {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 600px 600px;
+}
+
+nav {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  box-shadow: rgb(0 0 0 /12%) 0 6px 16px;
+  padding: 30px;
+  position: fixed;
+}
