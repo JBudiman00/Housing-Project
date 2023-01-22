@@ -1,20 +1,39 @@
-import React from "react";
+import { React, useState } from "react";
+import SearchResults from "./SearchResults";
+import MapContainer from "./Map";
 export default function SearchMainPage() {
+    const [price1, setPrice1] = useState(0);
+    const [price2, setPrice2] = useState(0);
+    const [start_date, setStartDate] = useState('');
+    const [end_date, setEndDate] = useState('');
+    const [address, setAddress] = useState('');
+
+    const handleChange = (event) => {
+        setPrice1(event.target.value);
+        setPrice2(event.target.value);
+        setStartDate(event.target.value);
+        setEndDate(event.target.value);
+        setAddress(event.target.value);
+    }
+
     return (
         <div className="main-result-page">
+            <div className="results--title">
+                Storage options
+            </div>
             <div className="filters">
                 <div className="price--filters">
                     Price Range:
                     <form className="price-form">
                         <input
                             className="price--input"
+                            value = {price1}
                             type="number"
-                            required
                         /> -
                         <input
                             className="price--input"
+                            value = {price2}
                             type="number"
-                            required
                         />
                     </form>
                 </div>
@@ -24,13 +43,13 @@ export default function SearchMainPage() {
                         <input
                             className="date--input"
                             type="date"
-                            required
+                            value = {start_date}
                         />
                         To:
                         <input
                             className="date--input"
                             type="date"
-                            required
+                            value = {end_date}
                         />
                     </form>
                 </div>
@@ -40,6 +59,7 @@ export default function SearchMainPage() {
                         <input
                             className="address--input"
                             type="text"
+                            value = {address}
                         />
                     </form>
 
