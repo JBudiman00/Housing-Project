@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "Address": "249 S Chauncey Ave, West Lafayette, IN",
+        "Rate": 25,
+        "Owner":  "Sundra Patil",
+        "image_url": "./Images/chauncey.webp",
+        "size": 5,
+        "name": "Apartment 1",
+        "contact": "sundra123@gmail.com"
+    },
+    {
+        "id": 2,
+        "Address": "223 Pierce St, West Lafayette, IN",
+        "Rate": 25,
+        "Owner":  "Will Mayer",
+        "image_url": "./Images/pierce.jpg",
+        "size": 6,
+        "name": "Apartment 2",
+        "contact": "sundra123@gmail.com"
+    },
+    {
+        "id": 3,
+        "Address": "134 Pierce St, West Lafayette, IN",
+        "Rate": 20,
+        "Owner":  "John Willis",
+        "image_url": "./Images/campus_edge.jpg",
+        "size": 8,
+        "name": "Campus Edge",
+        "contact": "willisj3@gmail.com"
+    },
+    {
+        "id": 4,
+        "Address": "305 N Salisbury St, West Lafayette, IN",
+        "Rate": 17,
+        "Owner":  "Mary Borchers",
+        "image_url": "./Images/sali.jpg",
+        "size": 9,
+        "name": "Stratford II",
+        "contact": "maryb@gmail.com"
+    },
+    {
+        "id": 5,
+        "Address": "318 N Salisbury, West Lafayette, IN",
+        "Rate": 18,
+        "Owner":  "Lucas Preacher",
+        "image_url": "./Images/salis.jpg",
+        "size": 5, 
+        "name": "Apartment 5",
+        "contact": "lpreacher@gmail.com"
+    }
+]
