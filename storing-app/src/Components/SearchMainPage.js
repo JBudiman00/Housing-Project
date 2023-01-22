@@ -1,7 +1,20 @@
-import React from "react";
+import { React, useState } from "react";
 import SearchResults from "./SearchResults";
 import MapContainer from "./Map";
 export default function SearchMainPage() {
+    const [price1, setPrice1] = useState(0);
+    const [price2, setPrice2] = useState(0);
+    const [start_date, setStartDate] = useState('');
+    const [end_date, setEndDate] = useState('');
+    const [address, setAddress] = useState('');
+
+    const handleChange = (event) => {
+        setPrice1(event.target.value);
+        setPrice2(event.target.value);
+        setStartDate(event.target.value);
+        setEndDate(event.target.value);
+        setAddress(event.target.value);
+    }
 
     return (
         <div className="main-result-page">
@@ -14,10 +27,12 @@ export default function SearchMainPage() {
                     <form className="price-form">
                         <input
                             className="price--input"
+                            value = {price1}
                             type="number"
                         /> -
                         <input
                             className="price--input"
+                            value = {price2}
                             type="number"
                         />
                     </form>
@@ -28,11 +43,13 @@ export default function SearchMainPage() {
                         <input
                             className="date--input"
                             type="date"
+                            value = {start_date}
                         />
                         To:
                         <input
                             className="date--input"
                             type="date"
+                            value = {end_date}
                         />
                     </form>
                 </div>
@@ -42,6 +59,7 @@ export default function SearchMainPage() {
                         <input
                             className="address--input"
                             type="text"
+                            value = {address}
                         />
                     </form>
 

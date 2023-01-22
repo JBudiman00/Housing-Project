@@ -15,6 +15,7 @@ export default function SearchResults(props) {
             */
         })
     }
+   
     useEffect(() => {
         getData();
     }, []);
