@@ -1,8 +1,5 @@
 import React from "react";
-import SearchResults from "./SearchResults";
-import MapContainer from "./Map";
 export default function SearchMainPage() {
-
     return (
         <div className="main-result-page">
             <div className="filters">

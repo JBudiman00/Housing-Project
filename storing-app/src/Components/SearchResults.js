@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 
 export default function SearchResults(props) {
     return (
-        <Link to= {`/reservation/:${props.address}`} className="card">
-            <img src="./Images/test_image.jpg" className="img-storage" />
+        <Link to= {`/reservation/:${props.owner}/:${props.price}/:${props.name}/:${props.storageSize}`} className="card">
+            <img src= {props.imageURL} className="img-storage" />
             <div className="card__info">
-                <h1>Storage 1</h1>
-                <h2>Price: {props.price}</h2>
+                <h1>{props.name}</h1>
+                <h2>Price: ${props.price} / Day</h2>
                 <h2>Address: {props.address}</h2>
                 <CgProfile className="profile-icon" size={35} />
-                <span>Jimmy Dinh</span>
+                <span>{props.owner}</span>
             </div>
         </Link>
 

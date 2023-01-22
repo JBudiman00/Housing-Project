@@ -4,8 +4,10 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 const mapStyles = {
     width: '400px',
     height: '400px',
-    marginLeft: '100px',
-    marginRight: '50px'
+    marginLeft: '300px',
+    marginRight: '50px',
+    marginTop: '10px',
+    borderRadius: '10px'
 };
 
 export class MapContainer extends Component {
@@ -15,12 +17,12 @@ export class MapContainer extends Component {
                 google={this.props.google}
                 zoom={14}
                 style={mapStyles}
-                initialCenter={this.props.storageLocation}
+                initialCenter={{lat: 40.0, lng: -80}}
             >
-                {console.log(this.props.storageLocation)}
+                {console.log({lat: 40.0, lng: -80})}
                 <Marker
                     name={'Dolores park'}
-                    position={this.props.storageLocation} />
+                    position={{lat: 40.0, lng: -80}} />
                 <Marker />
             </Map>
         );
