@@ -2,6 +2,7 @@ import { React, useEffect } from "react";
 import {CgProfile} from "react-icons/cg";
 import { app, database } from "./firebaseConfig";
 import { collection, doc, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function SearchResults(props) {
     const collectionRef = collection(database, "users");

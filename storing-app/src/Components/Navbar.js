@@ -11,7 +11,7 @@ export default function NavBar(props) {
         <>
             <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
                 <div class="container">
-                    <a href="/" class="navbar-brand d-flex w-50 me-auto">Store My Stuff</a>
+                    <a href="/" class="navbar-brand d-flex w-50 me-auto">PACK-I.T.</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -24,7 +24,7 @@ export default function NavBar(props) {
                         InputProps={{
                             endAdornment: (
                                 <IconButton>
-                                    <SearchIcon />
+                                    <SearchIcon onClick = {props.handleChange}/>
                                 </IconButton>
                             ),
                         }}

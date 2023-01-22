@@ -1,7 +1,8 @@
-import {React, useState, useEffect} from "react";
+import {React, useState} from "react";
 import { app, database } from "./firebaseConfig";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc, setDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
     let auth = getAuth();
@@ -87,7 +88,7 @@ export default function SignUp() {
                     onChange={(event) => handleInput(event)}
                 />
             </form>
-            <button className="login--button" onClick={handleLogin}>Log in</button>
+            <button className="login--button" onClick={handleLogin}><Link className="login-link" to = "/">Sign up</Link></button>
         </div>
     )
 }

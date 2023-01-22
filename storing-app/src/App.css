@@ -161,8 +161,6 @@
   flex-direction: row;
 }
 
-.price-form {}
-
 .price--input {
   margin-left: 10px;
   width: 80px;
@@ -284,4 +282,9 @@ nav {
 .reserve {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.login-link {
+  text-decoration: none;
+  color: black;
 }

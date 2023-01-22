@@ -1,20 +1,7 @@
 import { React, useState } from "react";
-import SearchResults from "./SearchResults";
-import MapContainer from "./Map";
-export default function SearchMainPage() {
-    const [price1, setPrice1] = useState(0);
-    const [price2, setPrice2] = useState(0);
-    const [start_date, setStartDate] = useState('');
-    const [end_date, setEndDate] = useState('');
-    const [address, setAddress] = useState('');
-
-    const handleChange = (event) => {
-        setPrice1(event.target.value);
-        setPrice2(event.target.value);
-        setStartDate(event.target.value);
-        setEndDate(event.target.value);
-        setAddress(event.target.value);
-    }
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+export default function SearchMainPage(props) {
 
     return (
         <div className="main-result-page">
@@ -27,31 +14,42 @@ export default function SearchMainPage() {
                     <form className="price-form">
                         <input
                             className="price--input"
-                            value = {price1}
+                            value={props.price1}
                             type="number"
+                            onChange={props.setPrice1}
+                            name="price1"
                         /> -
                         <input
                             className="price--input"
-                            value = {price2}
+                            value={props.price2}
                             type="number"
+                            onChange={props.setPrice1}
+                            name="price2"
                         />
                     </form>
                 </div>
                 <div className="date--filters">
-                    <form className="date-form">
+                    <div className="date-form">
                         From:
-                        <input
-                            className="date--input"
-                            type="date"
-                            value = {start_date}
+                        <DatePicker
+                            selected={props.startDate}
+                            selectsStart
+                            startDate={props.startDate}
+                            endDate={props.endDate} // add the endDate to your startDate DatePicker now that it is defined
+                            className = "date--input"
+                            onChange={date => props.setStartDate(date)}
                         />
                         To:
-                        <input
-                            className="date--input"
-                            type="date"
-                            value = {end_date}
+                        <DatePicker
+                            selected={props.endDate}
+                            selectsEnd
+                            startDate={props.startDate}
+                            endDate={props.endDate}
+                            minDate={props.startDate}
+                            className = "date--input"
+                            onChange={date => props.setEndDate(date)}
                         />
-                    </form>
+                    </div>
                 </div>
                 <div className="address">
                     <form>
@@ -59,7 +57,8 @@ export default function SearchMainPage() {
                         <input
                             className="address--input"
                             type="text"
-                            value = {address}
+                            value={props.address}
+                            onChange={address => props.setAddress(address)}
                         />
                     </form>
 

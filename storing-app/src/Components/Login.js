@@ -2,6 +2,7 @@ import {React, useEffect, useState} from "react";
 import { app, database } from "./firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     let auth = getAuth();
@@ -65,7 +66,7 @@ export default function Login() {
                     onChange={(event) => handleInput(event)}
                 />
             </form>
-            <button className="login--button" onClick={handleLogin}>Log in</button>
+            <button className="login--button" onClick={handleLogin}><Link className="login-link" to = "/">Log in</Link></button>
         </div>
     
     )
