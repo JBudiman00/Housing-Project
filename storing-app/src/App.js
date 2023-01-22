@@ -44,7 +44,6 @@ function App() {
     console.log(price.price2)
     setNewData(data.filter(dat => (dat.Rate >= price.price1 && dat.Rate <= price.price2)).map(
       data => {
-        setPrice1(0);
         return (
           <SearchResults
             key={data.id}
