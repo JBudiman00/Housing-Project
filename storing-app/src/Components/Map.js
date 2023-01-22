@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
     width: '400px',
@@ -15,27 +15,18 @@ export class MapContainer extends Component {
                 google={this.props.google}
                 zoom={14}
                 style={mapStyles}
-                initialCenter={{lat: 37, lon: 122}}
+                initialCenter={this.props.storageLocation}
             >
-                <Marker
-                    name={'Kenyatta International Convention Centre'}
-                />
-                <Marker
-                    title={'The marker`s title will appear as a tooltip.'}
-                    name={'SOMA'}
-                    position={this.props.currentLocation} />
+                {console.log(this.props.storageLocation)}
                 <Marker
                     name={'Dolores park'}
                     position={this.props.storageLocation} />
                 <Marker />
             </Map>
-
-
-
         );
     }
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyD2r9j7xpGztOjbKgrzAbm9EB70JfLL-LU'
+    apiKey: 'AIzaSyBMdT1gM3sxgebpNmcoFFQcB4F23LMvPUY'
 })(MapContainer);

@@ -1,7 +1,7 @@
 import {React} from "react";
+import Geocode from "react-geocode";
 
-
-export default function Login() {
+export default function Login(props) {   
     return (
         <div className="Login">
             <h1 className="login--label">Login</h1>
@@ -13,7 +13,7 @@ export default function Login() {
                 />
                 <input 
                     className="input--form"
-                    type = "text"
+                    type = "password"
                     placeholder="Password"
                 />
             </form>

@@ -4,36 +4,62 @@ import './App.css';
 import NavBar from './Components/Navbar';
 import SearchResults from './Components/SearchResults';
 import SearchMainPage from './Components/SearchMainPage';
-import {React, useState, useEffect} from 'react';
-import MapResults from './Components/MapAndResults';
+import { React} from 'react';
+import Geocode from "react-geocode";
+import Reservation from './Components/Reservation';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [login, setLogin] = useState(false)
-  const [signup, setSignUp] = useState(false)
-  
-
-    function handleLogin() {
-        if (!login) {
-          setLogin(login => !login)
-          setSignUp(false)
-        }
-    }
-
-    function handleSignUp() {
-      if (!signup) {
-        setSignUp(signup => !signup)
-        setLogin(false)
-      }
-    }
-
   return (
     <div className="App">
-      <NavBar login = {handleLogin} signup = {handleSignUp} />
-      {false && <SearchResults />}
-      <SearchMainPage />
-      <MapResults />
-      {login && <Login />}
-      {signup && <SignUp />}
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/"
+            element={
+              (
+                <>
+                  <SearchMainPage />
+                  <div className="listings">
+                    <div className="results">
+                      <SearchResults
+                        changeLocation={() => this.changeLocation("1301 3rd Street, West Lafayette, IN 47906")}
+                        address={"1301 3rd Street, West Lafayette, IN 47906"}
+                        price={""}
+                        storageSize={""}
+                      />
+                      <SearchResults
+                        changeLocation={() => this.changeLocation("1301 3rd Street, West Lafayette, IN 47906")}
+                        price={""}
+                        storageSize={""}
+                        address={"1275 3rd Street, West Lafayette, IN 47906"}
+                      />
+                      <SearchResults
+                        address={"1301 3rd Street, West Lafayette, IN 47906"}
+                        price={""}
+                        storageSize={""}
+                      />
+                      <SearchResults
+                        price={""}
+                        storageSize={""}
+                        address={"1275 3rd Street, West Lafayette, IN 47906"}
+                      />
+                      <SearchResults
+                        price={""}
+                        storageSize={""}
+                        address={"1275 3rd Street, West Lafayette, IN 47906"}
+                      />
+                    </div>
+                  </div>
+                </>
+              )} />
+
+            <Route path="/login" element ={<Login />} />
+            <Route path="/sign-up" element ={<SignUp />} />
+            <Route path="/reservation/:address"  element={<Reservation />} exact/>
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }

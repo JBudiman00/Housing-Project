@@ -23,7 +23,7 @@ export default function SignUp() {
                 />
                 <input 
                     className="input--form"
-                    type = "text"
+                    type = "password"
                     placeholder="Password"
                 />
                 <input 
