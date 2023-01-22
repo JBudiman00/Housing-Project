@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from "react";
 import { app, database } from "./firebaseConfig";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 
 export default function Login() {
@@ -11,7 +11,7 @@ export default function Login() {
         password: ""
     });
 
-    const collectionRef = collection(database, 'users');
+    //const collectionRef = collection(database, 'users');
 
     const handleInput = (event) => {
         let newInput = { [event.target.name]: event.target.value };
@@ -20,15 +20,18 @@ export default function Login() {
     };
 
     const handleLogin = () => {
-        createUserWithEmailAndPassword(auth, data.email, data.password)
+        signInWithEmailAndPassword(auth, data.email, data.password)
         .then((response) => { 
             console.log(response.user)
             console.log(data.email)
             console.log(data.password)
+            alert("Logged in successfully")
         })
         .catch((err) => {
-            console.log(JSON.stringify(err)) 
+            console.log(JSON.stringify(err))
+            alert(err.message) 
         });
+        /*
         addDoc(collectionRef, {
             email: data.email,
             password: data.password
@@ -39,6 +42,7 @@ export default function Login() {
         .catch((err) => {
             alert(err.message);
         });
+        */
     }
     
 
