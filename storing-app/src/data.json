@@ -48,5 +48,15 @@
         "size": 5, 
         "name": "Apartment 5",
         "contact": "lpreacher@gmail.com"
+    },
+    {
+        "id": 6,
+        "Address": "100 S Chauncey Ave, West Lafayette, IN",
+        "Rate": 11,
+        "Owner":  "Jackson Tate",
+        "image_url": "./Images/test_image.jpg",
+        "size": 8, 
+        "name": "Rise",
+        "contact": "luke123@gmail.com"
     }
 ]
